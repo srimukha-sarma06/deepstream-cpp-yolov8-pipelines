@@ -105,6 +105,23 @@ From the build directory:
 
 ./deepstream_app ../config_infer_primary_yolov8.txt
 
+Model Used
+
+Model Statistics (YOLOv8)
+
+Model -	YOLOv8n (TensorRT)
+Input Resolution -	640 × 640
+Precision -	FP16
+Parameters ~3.2M
+Model Size	~6.2 MB
+Inference Backend -	TensorRT (DeepStream nvinfer)
+Custom Parser -	DeepStream-Yolo
+Performance Benchmarks
+Device	Streams	FPS (Per Stream)	Total Throughput	Latency (Avg)
+RTX 3050 (6GB)	4	~150 FPS	~600 FPS	~6–8 ms
+
+Benchmarks measured using DeepStream FPS probe after nvinfer with batched inference enabled in the multi-stream pipeline. Performance includes GPU decode, inference, OSD, and H.264 encoding.
+
 Notes
 
 Sample videos and TensorRT engine files are not included in this repository.
