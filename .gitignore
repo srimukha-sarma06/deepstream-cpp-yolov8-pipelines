@@ -1,0 +1,29 @@
+# Build folders
+build/
+*/build/
+
+models/
+*/models/
+# DeepStream / TensorRT
+*.engine
+*.trt
+*.onnx
+
+# Video files
+*.mp4
+*.avi
+*.mkv
+
+# Logs
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+multi2/
+
+DeepStream-Yolo/

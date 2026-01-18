@@ -1,0 +1,34 @@
+[property]
+gpu-id=0
+net-scale-factor=0.0039215697906911373
+model-color-format=0
+
+# --- PATHS (Updated for your setup) ---
+onnx-file=/workspace/data/basic_pipeline/models/10-06-2025.onnx
+model-engine-file=/workspace/data/basic_pipeline/models/model_final4_b4.engine
+labelfile-path=/workspace/data/model_labels_10-06-2025.txt
+
+# --- MODEL SPECS ---
+# Force this to 3 to match your model
+num-detected-classes=3
+batch-size=4
+network-mode=2  ; 0=FP32, 1=INT8, 2=FP16 (Faster)
+interval=0
+gie-unique-id=1
+process-mode=1
+network-type=0
+cluster-mode=2
+maintain-aspect-ratio=1
+symmetric-padding=1
+
+# --- PARSER ---
+# This points to the library you just compiled in /workspace/data
+custom-lib-path=/workspace/data/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so
+parse-bbox-func-name=NvDsInferParseYolo
+# If using YOLOv8, use this engine create function:
+engine-create-func-name=NvDsInferYoloCudaEngineGet
+
+[class-attrs-all]
+nms-iou-threshold=0.45
+pre-cluster-threshold=0.15
+topk=300
