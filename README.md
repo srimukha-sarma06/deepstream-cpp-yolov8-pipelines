@@ -1,10 +1,11 @@
-
 Deepstream C++ YOLOv8 Pipelines
+
 This repository contains NVIDIA DeepStream pipelines implemented in C++ using GStreamer, TensorRT, and custom YOLO parsers. It supports both single-stream and multi-stream inference using YOLOv8 models, designed for deployment on Jetson and NVIDIA dGPU systems.
 
 The project is built and tested using NVIDIA’s official DeepStream Docker environment for reproducibility.
 
 Repository Structure
+
 basic_pipeline/
   ├── main.cpp                         # Single-stream DeepStream C++ pipeline
   ├── config_infer_primary_yolov8.txt # NVInfer YOLOv8 configuration
@@ -19,14 +20,18 @@ deepstream_text_pipeline/
   ├── config_infer_primary_yolov8.txt
   ├── deepstream_app.txt            # Reference DeepStream app prototype config
   └── model_labels_10-06-2025.txt  # Class label file
+  
 Features
+
 YOLOv8 inference using TensorRT (NVInfer)
 Single-stream and multi-stream pipeline support
 Batched processing using nvmultiurisrcbin
 Dynamic GStreamer pad linking
 Modular CMake-based build system
 Docker-based reproducible environment
+
 Requirements
+
 NVIDIA GPU or Jetson device
 NVIDIA Container Toolkit
 Docker
@@ -35,7 +40,6 @@ CUDA 11.X+
 TensorRT
 Docker Environment (Recommended)
 This project is developed and tested using NVIDIA’s official DeepStream container:
-
 nvcr.io/nvidia/deepstream:7.1-gc-triton-devel
 Pull Image
 docker pull nvcr.io/nvidia/deepstream:7.1-gc-triton-devel
@@ -76,7 +80,8 @@ Run
 From the build directory:
 
 ./deepstream_app ../config_infer_primary_yolov8.txt
-Model Used
+
+
 Model Statistics (YOLOv8)
 Model: YOLOv8n (TensorRT)
 Input Resolution: 640 × 640
